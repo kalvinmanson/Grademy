@@ -18,7 +18,7 @@ class CreateEnrollentsTable extends Migration
         $table->integer('institution_id')->default(0);
         $table->integer('job_id')->default(0);
         $table->integer('program_id')->default(0);
-        $table->unsignedInteger('user_id');
+        $table->unsignedBigInteger('user_id');
         $table->foreign('user_id')->references('id')->on('users');
         $table->string('role')->default('Candidate');
         $table->timestamps();

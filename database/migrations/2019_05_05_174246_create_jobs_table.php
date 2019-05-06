@@ -15,9 +15,9 @@ class CreateJobsTable extends Migration
     {
       Schema::create('jobs', function (Blueprint $table) {
         $table->bigIncrements('id');
-        $table->unsignedInteger('institution_id');
+        $table->unsignedBigInteger('institution_id');
         $table->foreign('institution_id')->references('id')->on('institutions');
-        $table->unsignedInteger('user_id');
+        $table->unsignedBigInteger('user_id');
         $table->foreign('user_id')->references('id')->on('users');
         $table->string('name');
         $table->string('city')->nullable();

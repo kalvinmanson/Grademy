@@ -11,10 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'WebController@index')->name('home');
+Route::middleware(['first', 'second'])->group(function () {
+  Route::resource('jobs', 'JobController');
+});
